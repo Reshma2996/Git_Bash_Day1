@@ -1,0 +1,115 @@
+1. Write a blog on Difference between HTTP1.1 vs HTTP2
+
+Introduction:
+
+In the fast-paced world of web development and technology, the way data is transmitted between clients and servers plays a crucial role in determining the efficiency and speed of websites. Over the years, various versions of the Hypertext Transfer Protocol (HTTP) have been introduced, each with its own set of features and improvements. In this blog post, we'll delve into the differences between HTTP/1.1 and its successor, HTTP/2, to understand how the evolution of this protocol has impacted the performance of the World Wide Web.
+
+HTTP/1.1: The Traditional Approach
+HTTP/1.1, the most widely used version of the protocol for over a decade, served as the backbone of the web during a significant period of growth and development. However, as web pages became more complex and resource-heavy, HTTP/1.1 began to exhibit some limitations.
+
+One Connection at a Time:
+In the HTTP/1.1 protocol, each resource request establishes a separate connection. This means that only one request can be processed at a time per connection, leading to potential bottlenecks and slower loading times.
+
+Head-of-Line Blocking:
+The phenomenon known as head-of-line blocking occurs when one slow-loading resource can delay the loading of other resources in the queue, even if they are ready to be transmitted.
+
+Compression and Minification:
+To mitigate the impact of multiple resource requests, developers often resort to compressing and minifying assets. While effective, these techniques add complexity to the development process and may not fully address the underlying issues.
+
+
+HTTP/2: A Paradigm Shift
+In response to the challenges posed by HTTP/1.1, the Internet Engineering Task Force (IETF) introduced HTTP/2 in 2015, bringing about a paradigm shift in how web communications are handled.
+
+Multiplexing:
+One of the key enhancements in HTTP/2 is multiplexing, allowing multiple requests and responses to be transmitted concurrently over a single connection. This eliminates the need to establish multiple connections for parallel data exchange.
+
+Header Compression:
+HTTP/2 introduces header compression, reducing the overhead associated with transmitting redundant header information in each request and response. This optimization enhances the overall efficiency of data transfer.
+
+Binary Protocol:
+Unlike the text-based nature of HTTP/1.1, HTTP/2 adopts a binary protocol. This format simplifies parsing and processing, leading to faster and more reliable communication between clients and servers.
+
+Server Push:
+Server push is a groundbreaking feature in HTTP/2 that allows servers to proactively send resources to the client before they are explicitly requested. This capability reduces latency and accelerates page loading by anticipating the client's needs.
+
+
+Conclusion:
+The transition from HTTP/1.1 to HTTP/2 represents a significant leap forward in optimizing web performance. With features like multiplexing, header compression, and server push, HTTP/2 addresses the limitations of its predecessor, providing a more efficient and responsive foundation for modern web applications.
+
+While HTTP/2 has become widely adopted, it's essential for developers and website administrators to stay informed about emerging technologies. As the web continues to evolve, future iterations of the HTTP protocol may bring further enhancements, ushering in a new era of even faster and more streamlined internet experiences.
+
+2.Write a blog about objects and its internal representation in Javascript
+
+Introduction:
+
+JavaScript, a versatile programming language widely used for web development, owes much of its power to its ability to handle complex data structures efficiently. One of the fundamental building blocks in JavaScript is the object, a versatile and dynamic entity that allows developers to organize and manipulate data seamlessly. In this blog post, we will delve into the fascinating world of objects in JavaScript and explore how they are internally represented, uncovering the magic that makes them such a crucial aspect of the language.
+
+The Essence of Objects in JavaScript:
+At its core, an object in JavaScript is a collection of key-value pairs, where each key is a string (or Symbol) and each value can be any data type, including other objects. This flexible structure enables developers to model real-world entities and relationships in a way that is both intuitive and powerful.
+
+Creating Objects:
+Objects in JavaScript can be created using object literals, constructors, or the Object constructor function. For example:
+javascript
+Copy code
+// Object literal
+const person = { name: 'Ram', age: 27 };
+
+// Constructor function
+function Car(make, model) {
+  this.make = make;
+  this.model = model;
+}
+const myCar = new Car('Toyota', 'Camry');
+
+Internal Representation of Objects:
+Understanding how JavaScript internally represents objects is crucial for optimizing code and improving performance. 
+
+Properties and Methods:
+Properties of an object are stored as key-value pairs in a property table. Each property has a unique identifier (property key) associated with it. Methods, which are functions defined within an object, are also stored as properties.
+
+Hidden Classes:
+JavaScript engines use a concept known as hidden classes to optimize property access and assignment. When an object is created, the engine assigns it a hidden class based on the properties and methods it contains. Subsequent objects with the same structure share the same hidden class, leading to faster property access.
+
+Prototypes and Inheritance:
+Objects in JavaScript can inherit properties and methods from other objects through a mechanism called prototypes. Each object has a prototype, and the chain of prototypes forms the prototype chain. This enables efficient reuse of code and supports the concept of inheritance.
+
+Performance Considerations:
+Understanding the internal representation of objects has practical implications for writing efficient and performant JavaScript code. Here are some tips:
+
+Property Access:
+Accessing properties that are closer to the beginning of the prototype chain is faster. Minimize prototype chain traversal for frequently accessed properties.
+
+Consistent Property Assignment:
+Assigning properties in a consistent order helps JavaScript engines optimize hidden class assignments, leading to better performance.
+
+Object Shape:
+Be mindful of object shapes (property configurations) to leverage hidden class optimizations. Avoid adding or deleting properties dynamically if possible.
+
+Conclusion:
+Objects lie at the heart of JavaScript, providing a powerful mechanism for organizing and manipulating data. Understanding their internal representation not only demystifies the magic behind objects but also empowers developers to write more efficient and performant code. As you navigate the world of JavaScript, embracing the intricacies of objects will undoubtedly enhance your ability to craft elegant and high-performing web applications.
+
+3. What is IP Address, Port, MAC Address and HTTP
+
+IP Address:
+An IP (Internet Protocol) address is a numerical label assigned to each device connected to a computer network that uses the Internet Protocol for communication. It serves two main functions: host or network interface identification and location addressing. IP addresses come in two versions, IPv4 (32-bit) and IPv6 (128-bit), and they are essential for devices to communicate over the Internet.
+
+Port:
+In networking, a port is a logical construct that identifies a specific process to which a message or data packet is directed in a computer network. Ports are used to allow multiple applications or services to run on a single device, each having its unique identifier. Ports are identified by numbers, and the combination of an IP address and a port number forms a socket, enabling communication between devices.
+
+HTTP Methods:
+HTTP (Hypertext Transfer Protocol) methods, also known as HTTP verbs, indicate the desired action to be performed on a resource. The primary HTTP methods are:
+
+GET: Retrieve data from the specified resource.
+POST: Submit data to be processed to a specified resource.
+PUT: Update a resource or create a new resource if it does not exist.
+DELETE: Delete the specified resource.
+PATCH: Apply partial modifications to a resource.
+HEAD: Retrieve headers from the specified resource without the actual data.
+OPTIONS: Get information about communication options for the target resource.
+TRACE: Perform a message loop-back test along the path to the target resource.
+These methods define the actions that can be performed on resources, allowing developers to implement CRUD (Create, Read, Update, Delete) operations in web applications.
+
+MAC Address:
+A MAC (Media Access Control) address is a unique identifier assigned to a network interface controller (NIC) for communications on a physical network segment. MAC addresses are assigned by the manufacturer of the network interface card and are used for local network communication. They are typically represented as six groups of two hexadecimal digits, separated by colons or hyphens (e.g., 00:1A:2B:3C:4D:5E).
+
+In summary, IP addresses and ports facilitate communication over networks, HTTP methods define actions for web resource manipulation, and MAC addresses uniquely identify network interfaces on a local network. Each of these elements plays a crucial role in the functioning of modern computer networks and the Internet.
