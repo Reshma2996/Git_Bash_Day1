@@ -4,3 +4,7 @@ git commit -m "first commit"
 git branch -M main
 git remote add origin https://github.com/Reshma2996/Git_Bash_Day1
 git push -u origin main
+
+Additional commands:
+git config --global user.name “GitHub_user_name_here”
+git config --global user.email “GitHub_user_email_here”
